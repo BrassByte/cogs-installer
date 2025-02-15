@@ -1,4 +1,18 @@
-mkdir ./cogs
-$appKey="$1"
+#!/bin/bash
 
-echo "$appKey"
+# Create the directory if it doesn't already exist
+if [ ! -d "./cogs" ]; then
+  mkdir ./cogs
+fi
+
+# Check if the first argument is provided
+if [ -z "$1" ]; then
+  echo "Error: No appKey provided. Please pass the appKey as the first argument."
+  exit 1
+fi
+
+# Assign the first argument to appKey
+appKey="$1"
+
+# Echo the appKey
+echo "appKey: $appKey"
