@@ -69,9 +69,6 @@ echo "CPU Model: $cpu_model"
 cpu_threads=$(lscpu | grep "^CPU(s):" | awk -F: '{print $2}' | sed 's/^[ \t]*//')
 echo "CPU Threads: $cpu_threads"
 
-# Get the CPU clock speed
-cpu_clock_speed=$(lscpu | grep "CPU MHz" | awk -F: '{print $2}' | sed 's/^[ \t]*//')
-echo "CPU Clock Speed: $cpu_clock_speed MHz"
 
 # Get the RAM speed and type
 ram_speed=$(sudo dmidecode --type memory | grep "Speed:" | grep -v "Unknown" | head -n 1 | awk -F: '{print $2}' | sed 's/^[ \t]*//')
