@@ -1,4 +1,4 @@
 mkdir ./cogs
-$appKey="$0"
+$appKey="$1"
 
-echo $appKey
+echo "$appKey"
